@@ -8,5 +8,8 @@ class Office(ModelBase):
     url = models.URLField()
     photo = models.ImageField(upload_to='offices/')
 
+    class Meta:
+        db_table = 'office'
+
     def __unicode__ (self):
         return self.name

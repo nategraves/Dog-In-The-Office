@@ -79,6 +79,13 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'urls'
 
+# Login and Logout URLs
+
+LOGOUT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+
 TEMPLATE_DIRS = (
     os.path.join(DIRNAME, 'templates'),
 )
@@ -90,10 +97,23 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+
+    #Libraries
+    'django-twilio',
+
+    #Our Apps
     'plusplus',
     'offices',
     'dogs',
 )
+
+# User Account
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
+
+#Twilio Stuff
+TWILIO_ACCOUNT_SID = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+TWILIO_AUTH_TOKEN = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+
+<form method='POST'>
+    {{ form.as_p }}
+    <input type='submit' class='btn' value='Add Office'/>
+</form>
+
+{% endblock %}

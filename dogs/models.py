@@ -21,8 +21,13 @@ class Dog(ModelBase):
     def __unicode__(self):
         return '%s at %s' % (self.name, self.office.name)
 
+    class Meta:
+        db_table = 'dog'
 
 class DogDay(models.Model):
     dog = models.ForeignKey(Dog)
-    date = models.DateField(auto)
+    date = models.DateField()
     in_office = models.BooleanField()
+
+    class Meta:
+        db_table = 'dogday'
