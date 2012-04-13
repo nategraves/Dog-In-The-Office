@@ -5,11 +5,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-        url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
-        url(r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
+        url(r'^accounts/', include('registration.backends.default.urls')),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^dogs/', include('dogs.urls')),
 	url(r'^offices/', include('offices.urls')),
+        url(r'^profiles/', include('profiles.urls')),
+        url(r'^profile/', include('profiles.urls')),
 	url(r'^$', include('index.urls')),	
 )
 

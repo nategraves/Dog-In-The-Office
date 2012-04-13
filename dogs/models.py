@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from plusplus.models import ModelBase
 from offices.models import Office
@@ -14,9 +15,9 @@ class Dog(ModelBase):
 
     name = models.CharField(max_length=255)
     size = models.CharField(max_length=1, choices=DOG_SIZES)
-    phone = models.CharField(max_length=32)
     photo = models.ImageField(upload_to='dogs/')
     office = models.ForeignKey(Office)
+    owner = models.ForeignKey(User)
 
     def __unicode__(self):
         return '%s at %s' % (self.name, self.office.name)

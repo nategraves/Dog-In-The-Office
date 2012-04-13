@@ -90,6 +90,8 @@ TEMPLATE_DIRS = (
     os.path.join(DIRNAME, 'templates'),
 )
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -100,15 +102,17 @@ INSTALLED_APPS = (
 
     #Libraries
     'django-twilio',
+    'registration',
 
     #Our Apps
     'plusplus',
+    'profiles',
     'offices',
     'dogs',
 )
 
 # User Account
-AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+AUTH_PROFILE_MODULE = 'profiles.UserProfile'
 
 
 #Twilio Stuff

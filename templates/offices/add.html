@@ -2,9 +2,10 @@
 
 {% block main %}
 
-<form method='POST'>
+ <form method='POST' enctype="multipart/form-data">
     {{ form.as_p }}
     <input type='submit' class='btn' value='Add Office'/>
+    {% csrf_token %}
 </form>
 
 {% endblock %}
